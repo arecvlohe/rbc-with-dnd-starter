@@ -3,18 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "moment": "^2.22.1",
-    "react": "^16.3.2",
-    "react-big-calendar": "^0.19.0",
-    "react-dnd": "^2.6.0",
-    "react-dnd-html5-backend": "^2.6.0",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "moment": "2.24.0",
+    "react": "16.8.6",
+    "react-big-calendar": "0.20.4",
+    "react-dnd": "7.4.5",
+    "react-dnd-html5-backend": "7.4.4",
+    "react-dom": "16.8.6",
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

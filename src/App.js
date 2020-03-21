@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Calendar from "react-big-calendar";
+import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 
@@ -7,15 +7,17 @@ import "./App.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-const localizer = Calendar.momentLocalizer(moment);
+const localizer = momentLocalizer(moment);
 const DnDCalendar = withDragAndDrop(Calendar);
 
 class App extends Component {
   state = {
     events: [
       {
-        start: new Date(),
-        end: new Date(moment().add(1, "days")),
+        start: moment().toDate(),
+        end: moment()
+          .add(1, "days")
+          .toDate(),
         title: "Some title"
       }
     ]
@@ -37,7 +39,7 @@ class App extends Component {
     return (
       <div className="App">
         <DnDCalendar
-          defaultDate={new Date()}
+          defaultDate={moment().toDate()}
           defaultView="month"
           events={this.state.events}
           localizer={localizer}

@@ -4,12 +4,12 @@
   "private": true,
   "dependencies": {
     "moment": "2.24.0",
-    "react": "16.8.6",
-    "react-big-calendar": "0.20.4",
-    "react-dnd": "7.4.5",
-    "react-dnd-html5-backend": "7.4.4",
-    "react-dom": "16.8.6",
-    "react-scripts": "3.0.1"
+    "react": "16.13.1",
+    "react-big-calendar": "0.24.1",
+    "react-dnd": "10.0.2",
+    "react-dnd-html5-backend": "10.0.2",
+    "react-dom": "16.13.1",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

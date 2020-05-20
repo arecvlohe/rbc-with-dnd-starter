@@ -9,31 +9,38 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 const localizer = momentLocalizer(moment);
 const DnDCalendar = withDragAndDrop(Calendar);
+const seedDuration = 1; // Days
 
 class App extends Component {
   state = {
     events: [
       {
         start: moment().toDate(),
+        duration: seedDuration,
         end: moment()
-          .add(1, "days")
+          .add(seedDuration, "days")
           .toDate(),
         title: "Some title"
       }
     ]
   };
 
-  onEventResize = (type, { event, start, end, allDay }) => {
+  onEventResize = ({start, end}) => {
     this.setState(state => {
       state.events[0].start = start;
       state.events[0].end = end;
+      state.events[0].duration = moment(end).diff(start, 'days');
       return { events: state.events };
-    });
+    });  
   };
 
   onEventDrop = ({ event, start, end, allDay }) => {
-    console.log(start);
-  };
+    this.setState(state => {
+      state.events[0].start = start;
+      state.events[0].end = moment(start).add(state.events[0].duration, "days");
+      return { events: state.events };
+    });
+  };  
 
   render() {
     return (

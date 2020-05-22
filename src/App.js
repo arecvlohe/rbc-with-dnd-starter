@@ -15,24 +15,24 @@ class App extends Component {
     events: [
       {
         start: moment().toDate(),
-        end: moment()
-          .add(1, "days")
-          .toDate(),
-        title: "Some title"
-      }
-    ]
+        end: moment().add(1, "days").toDate(),
+        title: "Some title",
+      },
+    ],
   };
 
-  onEventResize = (type, { event, start, end, allDay }) => {
-    this.setState(state => {
+  onEventResize = (data) => {
+    const { start, end } = data;
+
+    this.setState((state) => {
       state.events[0].start = start;
       state.events[0].end = end;
       return { events: state.events };
     });
   };
 
-  onEventDrop = ({ event, start, end, allDay }) => {
-    console.log(start);
+  onEventDrop = (data) => {
+    console.log(data);
   };
 
   render() {

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "moment": "2.24.0",
+    "moment": "2.26.0",
     "react": "16.13.1",
-    "react-big-calendar": "0.24.1",
+    "react-big-calendar": "0.24.6",
     "react-dnd": "10.0.2",
     "react-dnd-html5-backend": "10.0.2",
     "react-dom": "16.13.1",

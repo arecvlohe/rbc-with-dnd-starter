@@ -27,7 +27,7 @@ class App extends Component {
     this.setState((state) => {
       state.events[0].start = start;
       state.events[0].end = end;
-      return { events: state.events };
+      return { events: [...state.events] };
     });
   };
 
